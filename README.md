@@ -1,70 +1,145 @@
-# Getting Started with Create React App
+# Mini Fleet Management App (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A mini fleet management application built using **React** that demonstrates
+authentication, protected routing, CRUD operations, and basic performance
+optimization using React hooks.
 
-## Available Scripts
+The application focuses on **core React concepts and logic**, with minimal UI
+and no external state management libraries.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Authentication with fixed admin credentials
+- Protected routes using React Router
+- Admin dashboard with fleet management
+- Add, update, delete, and manage vehicle availability
+- Performance optimization using `React.memo` and `useCallback`
+- Clean component-based architecture
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🔐 Authentication Details
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use the following credentials to log in:
 
-### `npm run build`
+- **Email:** `admin@gmail.com`
+- **Password:** `admin1234`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Unauthenticated users cannot access the admin dashboard.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛣️ Routes
 
-### `npm run eject`
+| Route   | Access Type | Description          |
+|--------|------------|----------------------|
+| /login | Public     | Login page           |
+| /admin | Protected  | Admin dashboard      |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧩 Application Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+src/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+├── components/
 
-## Learn More
+│ ├── ProtectedRoute.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+│ ├── FleetCard.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+│ ├── Navbar.js
 
-### Code Splitting
+│ └── Sidebar.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+├── pages/
 
-### Analyzing the Bundle Size
+│ ├── Login.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+│ └── Admin.js
 
-### Making a Progressive Web App
+├── App.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+└── index.js
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🧠 React Concepts Used
 
-### Deployment
+- `useState` – form handling, authentication state, fleet data
+- `useEffect` – focusing input on page load
+- `useRef` – email input focus
+- `useCallback` – optimized handler functions
+- `React.memo` – prevents unnecessary re-renders
+- React Router – routing and navigation
+- Protected Routes – access control logic
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## ⚙️ Fleet Management Functionality
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Add Fleet
+- Vehicle Registration Number
+- Category (Auto / Car / Truck / Bus)
+- Driver Name
+- Availability Status
+- Validates required fields
+- Clears form after submission
+
+### Update Driver
+- Uses `prompt()`
+- Prevents empty or invalid input
+
+### Change Availability
+- Toggles between Available and Unavailable
+- Updates UI instantly
+
+### Delete Fleet
+- Requires confirmation using `confirm()`
+- Deletes only after confirmation
+
+---
+
+## ⚡ Performance Optimization
+
+To avoid unnecessary re-renders:
+- FleetCard component is extracted and wrapped with `React.memo`
+- Action handlers are memoized using `useCallback`
+
+Only the affected fleet card re-renders on updates.
+
+---
+
+## 🧪 Running the Project Locally
+
+To run this project on your system:
+
+1. Download or clone the repository from GitHub.
+
+2. Navigate to the project folder:
+   ```bash
+   cd fleet-management-react-app
+   
+### Install dependencies:
+  npm install
+  
+### Start the development server:
+  npm start
+
+### Open in browser:
+  http://localhost:3000/login
+
+## 📌 Notes
+UI is intentionally minimal
+
+No external state management libraries are used
+
+Focus is on React fundamentals and correctness
+
+## 👩‍💻 Author
+Ekambari Devi Kotti
+
+### GitHub: https://github.com/ekambaridevikotti
+
