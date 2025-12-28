@@ -57,5 +57,4 @@ const Sidebar = ({ addFleet }) => {
     </div>
   );
 };
-
 export default Sidebar;
